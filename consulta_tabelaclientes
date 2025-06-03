@@ -1,0 +1,28 @@
+CREATE TABLE tabelaclientes (
+  ID_Cliente INT PRIMARY KEY,
+  Nome_Cliente VARCHAR (250),
+  Informacoes_de_Contato VARCHAR (250)
+);
+
+INSERT INTO tabelaclientes
+(id_cliente,
+nome_cliente,
+informacoes_de_contato,
+Endereço_Cliente)
+VALUES
+('1', 'Ana Silva', 'ana.silva@email.com', 'rua flores - casa 1'),
+('2', 'João Santos', 'joao.santos@provedor.com', 'Rua dos pinheiros, 25'),
+('3', 'Maria Fernandes', 'maria.fernandes@email.com', 'Rua Santo Antonio, 10'),
+('4', 'Carlos Pereira', 'carlos.pereira@email.com', 'Avenida rio, 67');
+
+SELECT * FROM tabelaclientes;
+
+ALTER TABLE tabelaclientes ADD Endereço_Cliente VARCHAR (250);
+
+SELECT informacoes_de_contato AS email_cliente FROM tabelaclientes;
+
+UPDATE tabelaclientes SET informacoes_de_contato = 'j.santos@email.com', 
+endereço_cliente = 'Rua dos paralelepipedos, 30 '
+WHERE id_cliente = 2;
+
+DROP TABLE tabelaclientes;
